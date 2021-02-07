@@ -3,32 +3,31 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true%>
+  <div class="form-group">
+    <%= f.label :name,for:"exampleInputName" %>
+    <%= f.text_field :name,id:"exampleInputName",class:"form-control",placeholder:"Enter a Name", autofocus: true%>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email,autocomplete: "email" %>
+  <div class="form-group">
+    <%= f.label :email,for:"exampleInputEmail1" %>
+    <%= f.email_field :email,type:"email",class:"form-control",id:"exampleInputEmail1",placeholder:"Enter email",autocomplete: "email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="form-group">
+    <%= f.label :password,for:"exampleInputPassword1" %>
+    <%= f.password_field :password, autocomplete: "current-password",type:"password" ,class:"form-control",id:"exampleInputPassword1",placeholder:"Password"%>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <small id="emailHelp" class="form-text text-muted">(<%= @minimum_password_length %> characters minimum)</small>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="form-group">
+    <%= f.label :password_confirmation,for:"exampleInputPasswordConfirmation" %>
+    <%= f.password_field :password_confirmation, autocomplete: "current-password",type:"password" ,class:"form-control",id:"exampleInputPasswordConfirmation",placeholder:"Password Confirmation"%>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+    <%= f.submit "Sign up",class:"btn btn-warning" %>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
