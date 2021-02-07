@@ -79,3 +79,5 @@ gem 'hirb', '~> 0.7.3'
 
 gem 'devise', '~> 4.7', '>= 4.7.2'
 
+gem 'iex-ruby-client'
+
