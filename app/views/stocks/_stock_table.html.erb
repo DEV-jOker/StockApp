@@ -1,0 +1,14 @@
+
+  <table class="table table-striped table-hover" id='user-stocks'>
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render current_user.stocks %>
+  </tbody>
+</table>

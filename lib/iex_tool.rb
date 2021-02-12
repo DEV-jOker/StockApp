@@ -4,7 +4,7 @@ module IexTool
   def self.get_stock_details(symbol)
     begin
       quote = @client.quote(symbol)
-      return {name:quote.company_name,latest_price:quote.latest_price,symbol:symbol}
+      return {name:quote.company_name,price:quote.latest_price,symbol:quote.symbol}
     rescue => exception
       nil
     end

@@ -1,0 +1,20 @@
+$("#stock-result").html("<%= j  render 'stocks/stock_results' %>")
+$("#add-stock").click(function(e){
+  var ele = $(this);
+  var symbol = $(this).attr("data-symbol");
+  var price = Number($(this).attr("data-price"));
+  var name = $(this).attr("data-name")
+  $.ajax({
+  type: "POST",
+  url: '/stocks',
+  data: {symbol:symbol,price:price,name:name},
+  success: function(res){
+    ele.hide();
+    $('#stock-table-list').html("");
+    $('#stock-table-list').html("<%= j render 'stocks/stock_table' %>")
+  },
+  error: function(err){
+
+  }
+});
+})

@@ -17,3 +17,25 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).on("turbolinks:load",function(){
+  $(".remove-stock").click(function(e){
+    alert("test");
+    var ele = $(this);
+    var symbol = Number($(this).attr("stock-id"));
+    $.ajax({
+    type: "delete",
+    url: '/userstocks/'+symbol,
+    data: {},
+    success: function(res){
+      //ele.hide();
+      ele.closest('tr').remove();
+    },
+    error: function(err){
+  
+    }
+  });
+  })
+})
+
+

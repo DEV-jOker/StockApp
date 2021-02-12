@@ -1,0 +1,6 @@
+    <tr id="stock-<%= stock.id %>">
+      <th scope="row"><%= stock.symbol %></th>
+      <td><%= stock.name %></td>
+      <td><%= stock.price%></td>
+      <td><%= submit_tag("Remove Stock",type:"submit","stock-id"=>"#{stock.id}",class:"remove-stock btn btn-danger")%></td>
+    </tr>

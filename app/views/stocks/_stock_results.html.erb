@@ -1,0 +1,12 @@
+<% unless @stock.nil? %>
+<div class="card card-header stock-result">
+<p>
+  <strong>Symbol:</strong><%= @stock[:symbol]%> <strong>Name:</strong><%= @stock[:name]%> <strong>Price:</strong><%= @stock[:price]%><% if user_signed_in? %>
+  <%= submit_tag("Add Stock",type:"submit",id:"add-stock","data-price"=>"#{@stock[:price]}","data-symbol"=>"#{@stock[:symbol]}","data-name"=>"#{@stock[:name]}",class:"btn btn-primary")%>
+<% end %>
+</p>
+  
+</div>
+<%else%>
+  <%= render 'layouts/message' %>
+<% end %>

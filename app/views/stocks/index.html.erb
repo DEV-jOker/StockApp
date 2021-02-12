@@ -1,0 +1,11 @@
+<h3>Search Stocks</h3>
+<%= form_tag new_stock_path,method: :get, remote:true,class:"form-inline mt-2 mt-md-0" do %>
+  <%= text_field_tag(:symbol,"",class:"form-control mr-sm-2",type:"text",placeholder:"Search","aria-label"=>"Search")%>
+  <%= submit_tag("Search",type:"submit",class:"btn btn-outline-success my-2 my-sm-0")%>
+<% end %>
+<div id="stock-result"> </div>
+<%if current_user && current_user.stocks.length > 0%>
+<div id="stock-table-list">
+  <%= render 'stocks/stock_table' %>
+  </div>
+<%end%>
