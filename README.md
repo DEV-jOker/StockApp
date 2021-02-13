@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+StockApp created for learning ruby on rails
 
-Things you may want to cover:
+Concepts covered:
 
-* Ruby version
+* User sigin
 
-* System dependencies
+* Ajax calls
 
-* Configuration
+* API calls(IEX cloud used for requesting the gems)
 
-* Database creation
+* Bootstrap
 
-* Database initialization
+* Model associations
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
