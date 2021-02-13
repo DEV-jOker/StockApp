@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root 'pages#index'
   delete 'userstocks/:id', to:'user_stocks#destroy'
   #resources :userstocks
+  
+  resources :users
+  get 'search',to:'users#search',as:'search_users'
+  resources :friendships
   devise_for :users, path:"",path_names:{sign_up: "register",sign_in: "login",sign_out: "logout"}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

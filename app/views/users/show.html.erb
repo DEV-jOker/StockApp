@@ -1,0 +1,25 @@
+<div class="card border-info mb-3">
+  <div class="card-header">Profile</div>
+  <div class="card-body text-info">
+    <h5 class="card-title">Name: <%= @user.name %></h5>
+    <h5 class="card-title">Email: <%= @user.email %></h5>
+    <h5 class="card-title">Friends: <%= @user.friends.count %></h5>
+    <h5 class="card-title">Stocks: <%= @user.stocks.count %></h5>
+  </div>
+</div>
+<div class="card border-info mb-3">
+  <div class="card-header">Stocks</div>
+  <div class="card-body text-info">
+    <div id="stock-table-list">
+      <%= render 'stocks/stock_table',user:@user %>
+    </div>
+  </div>
+</div>
+<div class="card border-info mb-3">
+  <div class="card-header">Friends</div>
+  <div class="card-body text-info">
+    <div id="stock-table-list">
+      <%= render 'users/user_table',user_objects:@user.friends %>
+    </div>
+  </div>
+</div>

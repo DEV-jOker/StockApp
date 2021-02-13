@@ -1,0 +1,8 @@
+    <tr id="user-<%= user.id %>">
+      <th scope="row"><%= user.name %></th>
+      <td><%= user.email %></td>
+      <td><%= user.stocks.count%></td>
+      <td id="td-user-<%= user.id%>">
+        <%= render 'users/friend_button',user:user %>
+      </td>
+    </tr>

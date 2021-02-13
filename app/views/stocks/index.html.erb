@@ -6,6 +6,6 @@
 <div id="stock-result"> </div>
 <%if current_user && current_user.stocks.length > 0%>
 <div id="stock-table-list">
-  <%= render 'stocks/stock_table' %>
+  <%= render 'stocks/stock_table',user:current_user %>
   </div>
 <%end%>

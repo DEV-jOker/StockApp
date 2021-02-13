@@ -11,7 +11,7 @@ $("#add-stock").click(function(e){
   success: function(res){
     ele.hide();
     $('#stock-table-list').html("");
-    $('#stock-table-list').html("<%= j render 'stocks/stock_table' %>")
+    $('#stock-table-list').html("<%= j render 'stocks/stock_table',user:current_user %>")
   },
   error: function(err){
 

@@ -24,18 +24,35 @@ $(document).on("turbolinks:load",function(){
     var ele = $(this);
     var symbol = Number($(this).attr("stock-id"));
     $.ajax({
-    type: "delete",
-    url: '/userstocks/'+symbol,
-    data: {},
-    success: function(res){
-      //ele.hide();
-      ele.closest('tr').remove();
-    },
-    error: function(err){
-  
-    }
+      type: "delete",
+      url: '/userstocks/'+symbol,
+      data: {},
+      success: function(res){
+        //ele.hide();
+        ele.closest('tr').remove();
+      },
+      error: function(err){
+    
+      }
+    });
   });
-  })
+  $(".remove-user").click(function(e){
+    alert("test");
+    var ele = $(this);
+    var id = Number($(this).attr("user-id"));
+    $.ajax({
+      type: "delete",
+      url: '/friendships/'+id,
+      data: {},
+      success: function(res){
+        //ele.hide();
+        alert("removed")
+      },
+      error: function(err){
+    
+      }
+    });
+  });
 })
 
 

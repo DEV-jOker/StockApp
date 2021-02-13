@@ -1,0 +1,9 @@
+<h3>Search Users</h3>
+<%= form_tag search_users_path,method: :get, remote:true,class:"form-inline mt-2 mt-md-0" do %>
+  <%= text_field_tag(:search,"",class:"form-control mr-sm-2",type:"text",placeholder:"Search Users","aria-label"=>"Search")%>
+  <%= submit_tag("Search",type:"submit",class:"btn btn-outline-success my-2 my-sm-0")%>
+<% end %>
+
+<div id="user-result">
+
+</div>

@@ -9,13 +9,16 @@
       <li class="nav-item active">
         <%= link_to 'Stocks', stocks_path,class:"nav-link" %>
       </li>
+      <li class="nav-item active">
+        <%= link_to 'Users', users_path,class:"nav-link" %>
+      </li>
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="account-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Account
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="account-profile">
-            <%= link_to 'Profile', "#",class:"dropdown-item" %>
+            <%= link_to 'Profile', current_user,class:"dropdown-item" %>
             <%= link_to 'Edit', edit_user_registration_path,class:"dropdown-item" %>
           </div>
         </li>
